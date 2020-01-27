@@ -1,9 +1,7 @@
 # Contributor Covenant Code of Conduct
 
-## 1. Be inclusive, considerate and respectful.
-In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to making participation in our project and
-our community a harassment-free experience for everyone.
+## 1. 
+Software enginners who will work and invest in public image by:
 
 ### 1.1.
 Accept full responsibility for your own work.
@@ -28,6 +26,9 @@ Consider issues of physical disabilities, allocation of resources, economic disa
 
 ### 1.8.
 Be encouraged to volunteer professional skills to good causes and contribute to public education concerning the discipline.
+
+### 1.9.
+Be inclusive, considerate and respectful.
 
 ## 2. Choose your words carefully.
 Be kind to others. Do not insult or put down others.
