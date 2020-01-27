@@ -2,10 +2,10 @@
 
 ## 1. Software enginners who will work and invest in public image by:
 
-1.1.
+#### 1.1.
  Accept full responsibility for your own work.
 
-1.2.
+#### 1.2.
  Moderate the interests of the software engineer, the employer, the client and the users with the public good.
 
 1.3. 
