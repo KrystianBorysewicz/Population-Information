@@ -29,8 +29,33 @@ Be encouraged to volunteer professional skills to good causes and contribute to 
 #### 1.9.
 Be inclusive, considerate and respectful.
 
-## 2. Choose your words carefully.
-Be kind to others. Do not insult or put down others.
+## 2. Software enginners will be ethical in all aproaches of there profession by:
+#### 2.1. 
+Further their knowledge of developments in the analysis, specification, design, development, maintenance and testing of software and related documents, together with the management of the development process.
+
+#### 2.2. 
+Improve their ability to create safe, reliable, and useful quality software at reasonable cost and within a reasonable time.
+
+#### 2.3. 
+Improve their ability to produce accurate, informative, and well-written documentation.
+
+#### 2.4.
+Improve their understanding of the software and related documents on which they work and of the environment in which they will be used.
+
+#### 2.5. 
+Improve their knowledge of relevant standards and the law governing the software and related documents on which they work.
+
+#### 2.6 
+Improve their knowledge of this Code, its interpretation, and its application to their work.
+
+#### 2.7 
+Not give unfair treatment to anyone because of any irrelevant prejudices.
+
+#### 2.8.
+Not influence others to undertake any action that involves a breach of this Code.
+
+#### 2.9. 
+Recognize that personal violations of this Code are inconsistent with being a professional software engineer.
 
 ## 3. Make differences into strenghts.
 We can find strength in diversity. Different people have different perspectives on issues, and that can be valuable for solving problems or generating new ideas. Being unable to understand why someone holds a viewpoint doesn’t mean that they’re wrong. Don’t forget that we all make mistakes, and blaming each other doesn’t get us anywhere.
