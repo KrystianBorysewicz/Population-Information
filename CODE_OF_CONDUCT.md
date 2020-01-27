@@ -34,7 +34,3 @@ Be kind to others. Do not insult or put down others.
 
 ## 3. Make differences into strenghts.
 We can find strength in diversity. Different people have different perspectives on issues, and that can be valuable for solving problems or generating new ideas. Being unable to understand why someone holds a viewpoint doesn’t mean that they’re wrong. Don’t forget that we all make mistakes, and blaming each other doesn’t get us anywhere.
-
-
-
-
