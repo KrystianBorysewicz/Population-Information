@@ -37,4 +37,4 @@ We can find strength in diversity. Different people have different perspectives 
 
 
 
-Instead, focus on resolving issues and learning from mistakes.
+
