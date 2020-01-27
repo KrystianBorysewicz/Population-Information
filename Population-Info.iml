@@ -7,10 +7,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/charm-glisten-6.0.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/charm-glisten-6.0.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
