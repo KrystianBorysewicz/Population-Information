@@ -1,7 +1,6 @@
 # Contributor Covenant Code of Conduct
 
-## 1. 
-Software enginners who will work and invest in public image by:
+## 1. Software enginners who will work and invest in public image by:
 
 ### 1.1.
 Accept full responsibility for your own work.
