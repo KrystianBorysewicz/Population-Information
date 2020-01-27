@@ -21,7 +21,7 @@ our community a harassment-free experience for everyone.
 
 ### 1.8. Be encouraged to volunteer professional skills to good causes and contribute to public education concerning the discipline.
 
-### 2. Choose your words carefully.
+## 2. Choose your words carefully.
 Be kind to others. Do not insult or put down others.
 
 ## 3. Make differences into strenghts.
