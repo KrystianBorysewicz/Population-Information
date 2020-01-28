@@ -28,12 +28,12 @@
 
 ## 3. Code of conduct in terms of Agile development.
 
-**2.1.** Focus on the developers
+**3.1.** Focus on the developers
 
-**2.2.** Be honest about complexity, dont take any uneccesary action on this code 
+**3.2.** Be honest about complexity, dont take any uneccesary action on this code 
 
-**2.3.** Be transparent
+**3.3.** Be transparent in details concerning public
 
-**2.4.** Improve their understanding of the software and related documents on which they work and of the environment in which they will be used.
+**3.4.** Further individual understanding of the software and related documents on which they work
 
-**2.5.** Not to influence others into undertaking any action that involves changing this code.
+**3.5.** Not to influence others into undertaking any action that involves changing this code.
