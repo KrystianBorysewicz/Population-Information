@@ -36,4 +36,4 @@
 
 **3.4.** Further individual understanding of the software and related documents on which they work
 
-**3.5.** Not to influence others into undertaking any action that involves changing this code.
+**3.5.** To use agile in a respectful manner and as a tool to improve efficiency and workflow
