@@ -14,8 +14,7 @@
 
 **1.6.** Be fair and avoid deception in all statements, particularly public ones, concerning software or related documents, methods and tools.
 
-#### 1.7. 
-Consider issues of physical disabilities, allocation of resources, economic disadvantage and other factors that can diminish access to the benefits of software.
+**1.7.** Consider issues of physical disabilities, allocation of resources, economic disadvantage and other factors that can diminish access to the benefits of software.
 
 **1.8.** Be encouraged to volunteer professional skills to good causes and contribute to public education concerning the discipline.
 
