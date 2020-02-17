@@ -43,9 +43,11 @@ A request for population information is sent to us.
 ## EXTENSIONS
 
 1. **Report selection**:
-    1. All the countries in the world organised by largest population to smallest.
-    2. All the countries in a continent organised by largest population to smallest.
-    3. All the countries in a region organised by largest population to smallest.
+    1. All the cities in the world organised by largest population to smallest.
+    2. All the cities in a continent organised by largest population to smallest.
+    2. All the cities in a region organised by largest population to smallest.
+    2. All the cities in a country organised by largest population to smallest.
+    2. All the cities in a district organised by largest population to smallest.
     
 2. **User input report selection**
     1. The top N populated countries in the world where N is provided by the user.
