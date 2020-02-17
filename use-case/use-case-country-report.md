@@ -1,26 +1,26 @@
-# USE CASE: 4 Produce a Report on the Salary of Employees of a Given Role
+# USE CASE: 1 Generate Country Report
 
-## CHARACTERISTIC INFORMATION
+
 
 ### Goal in Context
 
-As an *HR adviser* I want *to produce a report on the salary of employees of a given role* so that *I can support financial reporting of the organisation.*
+As an *Organization that reports on population* we want *to produce a report on the countries of the world* too allow *for easy access to information regarding countries and their populous*
 
 ### Scope
 
-Company.
+Organization.
 
 ### Level
 
-Primary task.
+Important task.
 
 ### Preconditions
 
-We know the role.  Database contains current employee salary data.
+We know the role.  Database contains current world and population data.
 
 ### Success End Condition
 
-A report is available for HR to provide to finance.
+A report is available for organization to provide for staff and public.
 
 ### Failed End Condition
 
@@ -28,28 +28,34 @@ No report is produced.
 
 ### Primary Actor
 
-HR Advisor.
+Population Information team.
 
 ### Trigger
 
-A request for finance information is sent to HR.
+A request for population information is sent to us.
 
 ## MAIN SUCCESS SCENARIO
 
-1. Finance request salary information for a given role.
-2. HR advisor captures name of the role to get salary information for.
-3. HR advisor extracts current salary information of all employees of the given role.
-4. HR advisor provides report to finance.
+1. User selects report to find individual report 
+2. User inputs to receive specific report
+3. Report is then captured and is used further for information analysis
 
 ## EXTENSIONS
 
-3. **Role does not exist**:
-    1. HR advisor informs finance no role exists.
-
+1. **Report selection**:
+    1. All the countries in the world organised by largest population to smallest.
+    2. All the countries in a continent organised by largest population to smallest.
+    3. All the countries in a region organised by largest population to smallest.
+    
+2. **User input report selection**
+    1. The top N populated countries in the world where N is provided by the user.
+    2. The top N populated countries in a continent where N is provided by the user.
+    3. The top N populated countries in a region where N is provided by the user.
+    
 ## SUB-VARIATIONS
 
 None.
 
 ## SCHEDULE
 
-**DUE DATE**: Release 1.0
+**DUE DATE**: Release v0.1-alpha-3
