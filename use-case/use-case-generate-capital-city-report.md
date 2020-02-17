@@ -42,9 +42,9 @@ A request for population information is sent to us.
 ## EXTENSIONS
 
 1. **Report selection**:
-  1. All the capital cities in the world organised by largest population to smallest.
-  1. All the capital cities in a continent organised by largest population to smallest.
-  1. All the capital cities in a region organised by largest to smallest.
+   1. All the capital cities in the world organised by largest population to smallest.
+   1. All the capital cities in a continent organised by largest population to smallest.
+   1. All the capital cities in a region organised by largest to smallest.
 
 2. **User input report selection**
    1. The top N populated capital cities in the world where N is provided by the user.
