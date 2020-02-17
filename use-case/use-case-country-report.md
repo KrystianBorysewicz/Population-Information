@@ -50,9 +50,11 @@ A request for population information is sent to us.
     2. All the cities in a district organised by largest population to smallest.
     
 2. **User input report selection**
-    1. The top N populated countries in the world where N is provided by the user.
-    2. The top N populated countries in a continent where N is provided by the user.
-    3. The top N populated countries in a region where N is provided by the user.
+    1. The top N populated cities in the world where N is provided by the user.
+    1. The top N populated cities in a continent where N is provided by the user.
+    1. The top N populated cities in a region where N is provided by the user.
+    1. The top N populated cities in a country where N is provided by the user.
+    1. The top N populated cities in a district where N is provided by the user.
     
 ## SUB-VARIATIONS
 
