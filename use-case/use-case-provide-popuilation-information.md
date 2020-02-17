@@ -41,6 +41,7 @@ A request for population information is sent to us.
 ## EXTENSIONS
 
 1. **Report selection**:
+
     1. The population of the world.
     1. The population of a continent.
     1. The population of a region.
