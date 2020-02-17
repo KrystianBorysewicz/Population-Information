@@ -46,30 +46,114 @@ public class Main {
                 case 6:
                     break;
                 case 7:
+                    printQueryResult("SELECT Name as City, Population FROM city ORDER BY Population DESC");
                     break;
                 case 8:
+                    System.out.println("Input the name of the Continent:");
+                    String q8 = scn.nextLine();
+                    printQueryResult(String.format("SELECT City, Continent, Population FROM (\n" +
+                            "SELECT city.ID, city.Name as City, country.Continent, city.Population FROM country LEFT JOIN city ON country.Code = city.CountryCode\n" +
+                            "WHERE ID IS NOT NULL\n" +
+                            "UNION\n" +
+                            "SELECT city.ID, city.Name as City, country.Continent, city.Population FROM country RIGHT JOIN city ON country.Code = city.CountryCode) as A\n" +
+                            "WHERE Continent = '%s'\n" +
+                            "ORDER BY Population DESC", q8));
                     break;
                 case 9:
+                    System.out.println("Input the name of the Region:");
+                    String q9 = scn.nextLine();
+                    printQueryResult(String.format("SELECT City, Region, Population FROM (\n" +
+                            "SELECT city.ID, city.Name as City, country.Region, city.Population FROM country LEFT JOIN city ON country.Code = city.CountryCode\n" +
+                            "WHERE ID IS NOT NULL\n" +
+                            "UNION\n" +
+                            "SELECT city.ID, city.Name as City, country.Region, city.Population FROM country RIGHT JOIN city ON country.Code = city.CountryCode) as A\n" +
+                            "WHERE Region = '%s'\n" +
+                            "ORDER BY Population DESC", q9));
                     break;
                 case 10:
+                    System.out.println("Input the name of the Country:");
+                    String q10 = scn.nextLine();
+                    printQueryResult(String.format("SELECT City, Country, Population FROM (\n" +
+                            "SELECT city.ID, city.Name as City, country.Name as Country, city.Population FROM country LEFT JOIN city ON country.Code = city.CountryCode\n" +
+                            "WHERE ID IS NOT NULL\n" +
+                            "UNION\n" +
+                            "SELECT city.ID, city.Name as City, country.Name as Country, city.Population FROM country RIGHT JOIN city ON country.Code = city.CountryCode) as A\n" +
+                            "WHERE Country = '%s'\n" +
+                            "ORDER BY Population DESC", q10));
                     break;
                 case 11:
+                    System.out.println("Input the name of the District:");
+                    String q11 = scn.nextLine();
+                    printQueryResult(String.format("SELECT Name as City, District, Population FROM city WHERE District = '%s' ORDER BY Population DESC", q11));
                     break;
                 case 12:
+                    System.out.println("Input the number of Cities you want to print:");
+                    String q12 = scn.nextLine();
+                    printQueryResult(String.format("SELECT Name as City, Population FROM city ORDER BY Population DESC LIMIT %s", q12));
                     break;
                 case 13:
+                    System.out.println("Input the name of the Continent:");
+                    String q13a = scn.nextLine();
+                    System.out.println("Input the number of Cities you want to print:");
+                    String q13b = scn.nextLine();
+                    printQueryResult(String.format("SELECT City, Continent, Population FROM (\n" +
+                            "SELECT city.ID, city.Name as City, country.Continent, city.Population FROM country LEFT JOIN city ON country.Code = city.CountryCode\n" +
+                            "WHERE ID IS NOT NULL\n" +
+                            "UNION\n" +
+                            "SELECT city.ID, city.Name as City, country.Continent, city.Population FROM country RIGHT JOIN city ON country.Code = city.CountryCode ) as A\n" +
+                            "WHERE Continent = '%s'\n" +
+                            "ORDER BY Population DESC\n" +
+                            "LIMIT %s", q13a, q13b));
                     break;
                 case 14:
+                    System.out.println("Input the name of the Region:");
+                    String q14a = scn.nextLine();
+                    System.out.println("Input the number of Cities you want to print:");
+                    String q14b = scn.nextLine();
+                    printQueryResult(String.format("SELECT City, Region, Population FROM (\n" +
+                            "SELECT city.ID, city.Name as City, country.Region, city.Population FROM country LEFT JOIN city ON country.Code = city.CountryCode\n" +
+                            "WHERE ID IS NOT NULL\n" +
+                            "UNION\n" +
+                            "SELECT city.ID, city.Name as City, country.Region, city.Population FROM country RIGHT JOIN city ON country.Code = city.CountryCode) as A\n" +
+                            "WHERE Region = '%s'\n" +
+                            "ORDER BY Population DESC\n" +
+                            "LIMIT %s", q14a, q14b));
                     break;
                 case 15:
+                    System.out.println("Input the name of the Country:");
+                    String q15a = scn.nextLine();
+                    System.out.println("Input the number of Cities you want to print:");
+                    String q15b = scn.nextLine();
+                    printQueryResult(String.format("SELECT City, Country, Population FROM (\n" +
+                            "SELECT city.ID, city.Name as City, country.Name as Country, city.Population FROM country LEFT JOIN city ON country.Code = city.CountryCode\n" +
+                            "WHERE ID IS NOT NULL\n" +
+                            "UNION\n" +
+                            "SELECT city.ID, city.Name as City, country.Name as Country, city.Population FROM country RIGHT JOIN city ON country.Code = city.CountryCode) as A\n" +
+                            "WHERE Country = '%s'\n" +
+                            "ORDER BY Population DESC\n" +
+                            "limit %s", q15a, q15b));
                     break;
                 case 16:
+                    System.out.println("Input the name of the District:");
+                    String q16a = scn.nextLine();
+                    System.out.println("Input the number of Cities you want to print:");
+                    String q16b = scn.nextLine();
+                    printQueryResult(String.format("SELECT Name as City, District, Population FROM city WHERE Population IS NOT NULL AND District = '%s' ORDER BY Population desc LIMIT %s", q16a, q16b));
                     break;
                 case 17:
+                    printQueryResult("SELECT city.Name as City, city.Population from country LEFT JOIN city on country.Capital = city.ID WHERE Capital IS NOT NULL ORDER BY Population DESC");
                     break;
                 case 18:
+                    System.out.println("Input the name of the Continent:");
+                    String q18 = scn.nextLine();
+                    printQueryResult(String.format("SELECT city.Name as City, country.Continent, city.Population from country LEFT JOIN city ON country.Capital = city.ID \n" +
+                            "WHERE Capital IS NOT NULL AND Continent = '%s' ORDER BY Population DESC", q18));
                     break;
                 case 19:
+                    System.out.println("Input the name of the Region:");
+                    String q19 = scn.nextLine();
+                    printQueryResult(String.format("SELECT city.Name as City, city.Population FROM country LEFT JOIN city ON country.Capital = city.ID\n" +
+                            "WHERE Capital IS NOT NULL AND Region = '%s' ORDER BY Population desc", q19));
                     break;
                 case 20:
                     break;
