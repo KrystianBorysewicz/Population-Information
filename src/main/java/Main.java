@@ -74,16 +74,37 @@ public class Main {
                 case 20:
                     break;
                 case 21:
+                    System.out.println("Input the number of countries you want to print");
+                    printQueryResult(String.format("SELECT * FROM city JOIN country ON country.Capital = city.ID ORDER BY city.Population DESC LIMIT %s", scn.nextLine()));
                     break;
                 case 22:
+                    System.out.println("Input the number of countries you want to print");
+                    String n22 = scn.nextLine();
+                    System.out.println("Input the continent");
+                    String continent22 = scn.nextLine();
+                    printQueryResult(String.format("SELECT * FROM city JOIN country ON country.Capital = city.ID WHERE Continent = '%s' ORDER BY city.Population DESC LIMIT %s;\n", continent22, n22));
                     break;
                 case 23:
+                    System.out.println("Input the number of countries you want to print");
+                    String n23 = scn.nextLine();
+                    System.out.println("Input the region");
+                    String region23 = scn.nextLine();
+                    printQueryResult(String.format("SELECT * FROM city JOIN country ON country.Capital = city.ID WHERE Region = '%s' ORDER BY city.Population DESC LIMIT %s;\n", region23, n23));
                     break;
                 case 24:
+                    printQueryResult("SELECT SUM(DISTINCT country.Population) AS Total, SUM(city.Population) AS Cities, (SUM(DISTINCT country.Population) - SUM(city.Population)) AS \"Non-cities\", country.Continent\n" +
+                            "FROM country JOIN city ON country.Code = city.CountryCode\n" +
+                            "GROUP BY country.Continent;\n");
                     break;
                 case 25:
+                    printQueryResult("SELECT SUM(DISTINCT country.Population) AS Total, SUM(city.Population) AS Cities, (SUM(DISTINCT country.Population) - SUM(city.Population)) AS \"Non-cities\", country.Region\n" +
+                            "FROM country JOIN city ON country.Code = city.CountryCode\n" +
+                            "GROUP BY country.Region;\n");
                     break;
                 case 26:
+                    printQueryResult("SELECT SUM(DISTINCT country.Population) AS Total, SUM(city.Population) AS Cities, (SUM(DISTINCT country.Population) - SUM(city.Population)) AS Rural, country.Name\n" +
+                            "FROM country JOIN city ON country.Code = city.CountryCode\n" +
+                            "GROUP BY country.Name;\n");
                     break;
 
             }
