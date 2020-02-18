@@ -11,6 +11,7 @@ public class Main {
         Scanner scn = new Scanner(System.in);
         Boolean exit = false;
 
+        // Main program loop
         while(!exit) {
             printOptions(1);
 
@@ -299,6 +300,7 @@ public class Main {
                 "0. Exit",
                 "Chose your option by typing the option number and hitting ENTER"
         );
+        // Options for the "Special reports"
         List<String> options2 = Arrays.asList(
                 "1. Population of the world.",
                 "2. Population of a continent.",
