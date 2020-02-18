@@ -1,0 +1,24 @@
+@startuml
+@startuml
+
+actor Analys as "Analyst"
+
+rectangle WorldDB as "World database"
+
+rectangle "HR System" {
+    usecase UC1 as "Generate Other reports about
+                    population"
+
+    usecase UC2 as "The population of people,
+    people living in cities,
+    and people not living in cities
+    in each continent."
+
+    Analys - UC1
+    UC1 ..> UC2 : include
+    UC1 - WorldDB
+}
+@enduml
+
+
+//d123
