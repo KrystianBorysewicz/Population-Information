@@ -23,39 +23,49 @@ public class Main {
                     exit = true;
                     break;
                 case 1:
-                    printQueryResult("SELECT * FROM country ORDER BY Population DESC");
+                    printQueryResult("SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name \n" +
+                            "FROM country JOIN city ON country.Capital = city.ID ORDER BY country.Population DESC;");
                     break;
                 case 2:
-                    System.out.println("Input the continent: ");
-                    printQueryResult(String.format("SELECT * FROM country WHERE continent = '%s' ORDER BY Population DESC", scn.nextLine()));
+                    System.out.println("Input the name of the continent: ");
+                    printQueryResult(String.format("SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name AS Capital \n" +
+                            "FROM country JOIN city ON country.Capital = city.ID  \n" +
+                            " WHERE continent = '%s' ORDER BY Population DESC;", scn.nextLine()));
                     break;
                 case 3:
-                    System.out.println("Input the region: ");
-                    printQueryResult(String.format("SELECT * FROM country WHERE region = '%s' ORDER BY Population DESC", scn.nextLine()));
+                    System.out.println("Input the name of the region: ");
+                    printQueryResult(String.format("SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name AS Capital \n" +
+                            "FROM country JOIN city ON country.Capital = city.ID  \n" +
+                            " WHERE region = '%s' ORDER BY Population DESC;", scn.nextLine()));
                     break;
                 case 4:
-                    System.out.println("Input the number of countries you want to print");
-                    printQueryResult(String.format("SELECT * FROM country ORDER BY Population DESC LIMIT %s", scn.nextLine()));
+                    System.out.println("Input the number of countries you want to print: ");
+                    printQueryResult(String.format("SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name\n" +
+                            "FROM country JOIN city ON country.Capital = city.ID ORDER BY country.Population DESC LIMIT %s", scn.nextLine()));
                     break;
                 case 5:
-                    System.out.println("Input the number of countries you want to print");
-                    String s = scn.nextLine();
-                    System.out.println("Input the continent");
-                    String x = scn.nextLine();
-                    printQueryResult(String.format("SELECT * FROM country WHERE Continent = '%s' ORDER BY Population DESC LIMIT %s", x, s));
+                    System.out.println("Input the number of countries you want to print: ");
+                    String q5a = scn.nextLine();
+                    System.out.println("Input the name of the continent: ");
+                    String q5b = scn.nextLine();
+                    printQueryResult(String.format("SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name\n" +
+                            "FROM country JOIN city ON country.Capital = city.ID\n" +
+                            "WHERE Continent = '%s' ORDER BY country.Population DESC LIMIT %s;", q5b, q5a));
                     break;
                 case 6:
-                    System.out.println("Input the number of countries you want to print");
+                    System.out.println("Input the number of countries you want to print: ");
                     String q6a = scn.nextLine();
-                    System.out.println("Input the region");
+                    System.out.println("Input the name of the region: ");
                     String q6b = scn.nextLine();
-                    printQueryResult(String.format("SELECT * FROM country WHERE Region = '%s' ORDER BY Population DESC LIMIT %s", q6b, q6a));
+                    printQueryResult(String.format("SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, city.Name\n" +
+                            "FROM country JOIN city ON country.Capital = city.ID\n" +
+                            "WHERE Region = '%s' ORDER BY country.Population DESC LIMIT %s;", q6b, q6a));
                     break;
                 case 7:
                     printQueryResult("SELECT Name as City, Population FROM city ORDER BY Population DESC");
                     break;
                 case 8:
-                    System.out.println("Input the name of the Continent:");
+                    System.out.println("Input the name of the continent: ");
                     String q8 = scn.nextLine();
                     printQueryResult(String.format("SELECT City, Continent, Population FROM (\n" +
                             "SELECT city.ID, city.Name as City, country.Continent, city.Population FROM country LEFT JOIN city ON country.Code = city.CountryCode\n" +
@@ -66,7 +76,7 @@ public class Main {
                             "ORDER BY Population DESC", q8));
                     break;
                 case 9:
-                    System.out.println("Input the name of the Region:");
+                    System.out.println("Input the name of the region: ");
                     String q9 = scn.nextLine();
                     printQueryResult(String.format("SELECT City, Region, Population FROM (\n" +
                             "SELECT city.ID, city.Name as City, country.Region, city.Population FROM country LEFT JOIN city ON country.Code = city.CountryCode\n" +
@@ -77,7 +87,7 @@ public class Main {
                             "ORDER BY Population DESC", q9));
                     break;
                 case 10:
-                    System.out.println("Input the name of the Country:");
+                    System.out.println("Input the name of the country:");
                     String q10 = scn.nextLine();
                     printQueryResult(String.format("SELECT City, Country, Population FROM (\n" +
                             "SELECT city.ID, city.Name as City, country.Name as Country, city.Population FROM country LEFT JOIN city ON country.Code = city.CountryCode\n" +
@@ -88,19 +98,19 @@ public class Main {
                             "ORDER BY Population DESC", q10));
                     break;
                 case 11:
-                    System.out.println("Input the name of the District:");
+                    System.out.println("Input the name of the district: ");
                     String q11 = scn.nextLine();
                     printQueryResult(String.format("SELECT Name as City, District, Population FROM city WHERE District = '%s' ORDER BY Population DESC", q11));
                     break;
                 case 12:
-                    System.out.println("Input the number of Cities you want to print:");
+                    System.out.println("Input the number of cities you want to print: ");
                     String q12 = scn.nextLine();
                     printQueryResult(String.format("SELECT Name as City, Population FROM city ORDER BY Population DESC LIMIT %s", q12));
                     break;
                 case 13:
-                    System.out.println("Input the name of the Continent:");
+                    System.out.println("Input the name of the continent: ");
                     String q13a = scn.nextLine();
-                    System.out.println("Input the number of Cities you want to print:");
+                    System.out.println("Input the number of cities you want to print: ");
                     String q13b = scn.nextLine();
                     printQueryResult(String.format("SELECT City, Continent, Population FROM (\n" +
                             "SELECT city.ID, city.Name as City, country.Continent, city.Population FROM country LEFT JOIN city ON country.Code = city.CountryCode\n" +
@@ -112,9 +122,9 @@ public class Main {
                             "LIMIT %s", q13a, q13b));
                     break;
                 case 14:
-                    System.out.println("Input the name of the Region:");
+                    System.out.println("Input the name of the region: ");
                     String q14a = scn.nextLine();
-                    System.out.println("Input the number of Cities you want to print:");
+                    System.out.println("Input the number of cities you want to print: ");
                     String q14b = scn.nextLine();
                     printQueryResult(String.format("SELECT City, Region, Population FROM (\n" +
                             "SELECT city.ID, city.Name as City, country.Region, city.Population FROM country LEFT JOIN city ON country.Code = city.CountryCode\n" +
@@ -126,9 +136,9 @@ public class Main {
                             "LIMIT %s", q14a, q14b));
                     break;
                 case 15:
-                    System.out.println("Input the name of the Country:");
+                    System.out.println("Input the name of the country: ");
                     String q15a = scn.nextLine();
-                    System.out.println("Input the number of Cities you want to print:");
+                    System.out.println("Input the number of cities you want to print: ");
                     String q15b = scn.nextLine();
                     printQueryResult(String.format("SELECT City, Country, Population FROM (\n" +
                             "SELECT city.ID, city.Name as City, country.Name as Country, city.Population FROM country LEFT JOIN city ON country.Code = city.CountryCode\n" +
@@ -140,9 +150,9 @@ public class Main {
                             "limit %s", q15a, q15b));
                     break;
                 case 16:
-                    System.out.println("Input the name of the District:");
+                    System.out.println("Input the name of the district: ");
                     String q16a = scn.nextLine();
-                    System.out.println("Input the number of Cities you want to print:");
+                    System.out.println("Input the number of cities you want to print: ");
                     String q16b = scn.nextLine();
                     printQueryResult(String.format("SELECT Name as City, District, Population FROM city WHERE Population IS NOT NULL AND District = '%s' ORDER BY Population desc LIMIT %s", q16a, q16b));
                     break;
@@ -150,32 +160,32 @@ public class Main {
                     printQueryResult("SELECT city.Name as City, city.Population from country LEFT JOIN city on country.Capital = city.ID WHERE Capital IS NOT NULL ORDER BY Population DESC");
                     break;
                 case 18:
-                    System.out.println("Input the name of the Continent:");
+                    System.out.println("Input the name of the continent: ");
                     String q18 = scn.nextLine();
                     printQueryResult(String.format("SELECT city.Name as City, country.Continent, city.Population from country LEFT JOIN city ON country.Capital = city.ID \n" +
                             "WHERE Capital IS NOT NULL AND Continent = '%s' ORDER BY Population DESC", q18));
                     break;
                 case 19:
-                    System.out.println("Input the name of the Region:");
+                    System.out.println("Input the name of the region: ");
                     String q19 = scn.nextLine();
                     printQueryResult(String.format("SELECT city.Name as City, city.Population FROM country LEFT JOIN city ON country.Capital = city.ID\n" +
                             "WHERE Capital IS NOT NULL AND Region = '%s' ORDER BY Population desc", q19));
                     break;
                 case 20:
-                    System.out.println("Input the number of countries you want to print");
+                    System.out.println("Input the number of countries you want to print: ");
                     printQueryResult(String.format("SELECT * FROM city JOIN country ON country.Capital = city.ID ORDER BY city.Population DESC LIMIT %s", scn.nextLine()));
                     break;
                 case 21:
-                    System.out.println("Input the number of countries you want to print");
+                    System.out.println("Input the number of countries you want to print: ");
                     String n22 = scn.nextLine();
-                    System.out.println("Input the continent");
+                    System.out.println("Input the name of the continent: ");
                     String continent22 = scn.nextLine();
                     printQueryResult(String.format("SELECT * FROM city JOIN country ON country.Capital = city.ID WHERE Continent = '%s' ORDER BY city.Population DESC LIMIT %s;\n", continent22, n22));
                     break;
                 case 22:
-                    System.out.println("Input the number of countries you want to print");
+                    System.out.println("Input the number of countries you want to print: ");
                     String n23 = scn.nextLine();
-                    System.out.println("Input the region");
+                    System.out.println("Input the name of the region: ");
                     String region23 = scn.nextLine();
                     printQueryResult(String.format("SELECT * FROM city JOIN country ON country.Capital = city.ID WHERE Region = '%s' ORDER BY city.Population DESC LIMIT %s;\n", region23, n23));
                     break;
@@ -202,27 +212,27 @@ public class Main {
                             printQueryResult("SELECT SUM(population) as 'Total World Population' from country");
                             break;
                         case 2:
-                            System.out.println("Input the name of the Continent:");
+                            System.out.println("Input the name of the continent: ");
                             String a26 = scn.nextLine();
                             printQueryResult(String.format("SELECT continent, SUM(population) as 'Total Continent Population' from country where continent = '%s'", a26));
                             break;
                         case 3:
-                            System.out.println("Input the name of the Region:");
+                            System.out.println("Input the name of the region: ");
                             String b26 = scn.nextLine();
                             printQueryResult(String.format("SELECT SUM(population) from country where region = '%s'", b26));
                             break;
                         case 4:
-                            System.out.println("Input the name of the Country:");
+                            System.out.println("Input the name of the country: ");
                             String c26 = scn.nextLine();
                             printQueryResult(String.format("SELECT population from country where Name = '%s'", c26));
                             break;
                         case 5:
-                            System.out.println("Input the name of the District:");
+                            System.out.println("Input the name of the district: ");
                             String d26 = scn.nextLine();
                             printQueryResult(String.format("SELECT sum(population) from city where district = '%s'", d26));
                             break;
                         case 6:
-                            System.out.println("Input the name of the City:");
+                            System.out.println("Input the name of the city: ");
                             String e26 = scn.nextLine();
                             printQueryResult(String.format("SELECT population from city where name = '%s'", e26));
                             break;
