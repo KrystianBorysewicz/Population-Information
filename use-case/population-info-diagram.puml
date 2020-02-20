@@ -1,0 +1,20 @@
+@startuml
+@startuml
+
+actor Analys as "Analyst"
+
+rectangle WorldDB as "World database"
+
+rectangle "HR System" {
+    usecase UC1 as "Provide Popualtion information"
+
+    usecase UC2 as "The population of the world."
+
+    Analys - UC1
+    UC1 ..> UC2 : include
+    UC1 - WorldDB
+}
+@enduml
+
+
+//d123
