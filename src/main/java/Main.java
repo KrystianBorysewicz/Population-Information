@@ -165,37 +165,37 @@ public class Main {
                             "WHERE city.Population IS NOT NULL AND city.District = '%s' ORDER BY city.Population desc LIMIT %s", q16a, q16b));
                     break;
                 case 17:
-                    printQueryResult("SELECT city.Name as City, city.Population from country LEFT JOIN city on country.Capital = city.ID WHERE Capital IS NOT NULL ORDER BY Population DESC");
+                    printQueryResult("SELECT city.Name as City, country.Name as Country, city.Population from country LEFT JOIN city on country.Capital = city.ID WHERE Capital IS NOT NULL ORDER BY Population DESC");
                     break;
                 case 18:
                     System.out.println("Input the name of the continent: ");
                     String q18 = scn.nextLine();
-                    printQueryResult(String.format("SELECT city.Name as City, country.Continent, city.Population from country LEFT JOIN city ON country.Capital = city.ID \n" +
+                    printQueryResult(String.format("SELECT city.Name as City, country.Name as Country, city.Population from country LEFT JOIN city ON country.Capital = city.ID \n" +
                             "WHERE Capital IS NOT NULL AND Continent = '%s' ORDER BY Population DESC", q18));
                     break;
                 case 19:
                     System.out.println("Input the name of the region: ");
                     String q19 = scn.nextLine();
-                    printQueryResult(String.format("SELECT city.Name as City, city.Population FROM country LEFT JOIN city ON country.Capital = city.ID\n" +
+                    printQueryResult(String.format("SELECT city.Name as City, country.Name as Country, city.Population FROM country LEFT JOIN city ON country.Capital = city.ID\n" +
                             "WHERE Capital IS NOT NULL AND Region = '%s' ORDER BY Population desc", q19));
                     break;
                 case 20:
                     System.out.println("Input the number of countries you want to print: ");
-                    printQueryResult(String.format("SELECT * FROM city JOIN country ON country.Capital = city.ID ORDER BY city.Population DESC LIMIT %s", scn.nextLine()));
+                    printQueryResult(String.format("SELECT city.Name as City, country.Name as Country, city.Population FROM city JOIN country ON country.Capital = city.ID ORDER BY city.Population DESC LIMIT %s", scn.nextLine()));
                     break;
                 case 21:
                     System.out.println("Input the number of countries you want to print: ");
                     String n22 = scn.nextLine();
                     System.out.println("Input the name of the continent: ");
                     String continent22 = scn.nextLine();
-                    printQueryResult(String.format("SELECT * FROM city JOIN country ON country.Capital = city.ID WHERE Continent = '%s' ORDER BY city.Population DESC LIMIT %s;\n", continent22, n22));
+                    printQueryResult(String.format("SELECT city.Name as City, country.Name as Country, city.Population FROM city JOIN country ON country.Capital = city.ID WHERE Continent = '%s' ORDER BY city.Population DESC LIMIT %s;\n", continent22, n22));
                     break;
                 case 22:
                     System.out.println("Input the number of countries you want to print: ");
                     String n23 = scn.nextLine();
                     System.out.println("Input the name of the region: ");
                     String region23 = scn.nextLine();
-                    printQueryResult(String.format("SELECT * FROM city JOIN country ON country.Capital = city.ID WHERE Region = '%s' ORDER BY city.Population DESC LIMIT %s;\n", region23, n23));
+                    printQueryResult(String.format("SELECT city.Name as City, country.Name as Country, city.Population FROM city JOIN country ON country.Capital = city.ID WHERE Region = '%s' ORDER BY city.Population DESC LIMIT %s;\n", region23, n23));
                     break;
                 case 23:
                     printQueryResult("SELECT SUM(DISTINCT country.Population) AS Total, SUM(city.Population) AS Cities, (SUM(DISTINCT country.Population) - SUM(city.Population)) AS \"Non-cities\", country.Continent\n" +
