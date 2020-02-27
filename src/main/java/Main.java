@@ -198,19 +198,19 @@ public class Main {
                     printQueryResult(String.format("SELECT city.Name as City, country.Name as Country, city.Population FROM city JOIN country ON country.Capital = city.ID WHERE Region = '%s' ORDER BY city.Population DESC LIMIT %s;\n", region23, n23));
                     break;
                 case 23:
-                    printQueryResult("SELECT SUM(DISTINCT country.Population) AS Total, SUM(city.Population) AS Cities, (SUM(DISTINCT country.Population) - SUM(city.Population)) AS \"Non-cities\", country.Continent\n" +
+                    printQueryResult("SELECT country.Continent, SUM(DISTINCT country.Population) AS Total, CONCAT(SUM(city.Population), \" - \", (SUM(city.Population) / (SUM(DISTINCT country.Population)) * 100), \"%\") AS Cities, CONCAT((SUM(DISTINCT country.Population) - SUM(city.Population)), \" - \", ((SUM(DISTINCT country.Population) - SUM(city.Population)) / (SUM(DISTINCT country.Population)) * 100), \"%\")  AS \"Non-cities\"\n" +
                             "FROM country JOIN city ON country.Code = city.CountryCode\n" +
-                            "GROUP BY country.Continent;\n");
+                            "GROUP BY country.Continent;");
                     break;
                 case 24:
-                    printQueryResult("SELECT SUM(DISTINCT country.Population) AS Total, SUM(city.Population) AS Cities, (SUM(DISTINCT country.Population) - SUM(city.Population)) AS \"Non-cities\", country.Region\n" +
+                    printQueryResult("SELECT country.Region, SUM(DISTINCT country.Population) AS Total, CONCAT(SUM(city.Population), \" - \", (SUM(city.Population) / (SUM(DISTINCT country.Population)) * 100), \"%\") AS Cities, CONCAT((SUM(DISTINCT country.Population) - SUM(city.Population)), \" - \", ((SUM(DISTINCT country.Population) - SUM(city.Population)) / (SUM(DISTINCT country.Population)) * 100), \"%\")  AS \"Non-cities\"\n" +
                             "FROM country JOIN city ON country.Code = city.CountryCode\n" +
-                            "GROUP BY country.Region;\n");
+                            "GROUP BY country.Region;");
                     break;
                 case 25:
-                    printQueryResult("SELECT SUM(DISTINCT country.Population) AS Total, SUM(city.Population) AS Cities, (SUM(DISTINCT country.Population) - SUM(city.Population)) AS Rural, country.Name\n" +
+                    printQueryResult("SELECT country.Name, SUM(DISTINCT country.Population) AS Total, CONCAT(SUM(city.Population), \" - \", (SUM(city.Population) / (SUM(DISTINCT country.Population)) * 100), \"%\") AS Cities, CONCAT((SUM(DISTINCT country.Population) - SUM(city.Population)), \" - \", ((SUM(DISTINCT country.Population) - SUM(city.Population)) / (SUM(DISTINCT country.Population)) * 100), \"%\")  AS \"Non-cities\"\n" +
                             "FROM country JOIN city ON country.Code = city.CountryCode\n" +
-                            "GROUP BY country.Name;\n");
+                            "GROUP BY country.Name;");
                     break;
                 case 26:
                     printOptions(2);
