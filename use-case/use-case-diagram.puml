@@ -1,0 +1,38 @@
+@startuml
+@startuml
+
+actor Analys as "Analyst"
+
+database WorldDB as "World database"
+
+rectangle System {
+    usecase UC1 as "Generate Capital City report"
+
+    usecase UC2 as "Generate Country report"
+
+    usecase UC3 as "Generate City report"
+
+    usecase UC4 as "Provide Popualtion information"
+
+    usecase UC5 as "Provide spoken languages information"
+
+
+    Analys - UC2
+    Analys - UC1
+    Analys - UC3
+    Analys - UC4
+    Analys - UC5
+
+    UC2 - WorldDB
+    UC1 - WorldDB
+    UC3 - WorldDB
+    UC4 - WorldDB
+    UC5 - WorldDB
+
+
+    UC1 .. UC2
+    UC2 ..UC3
+    UC3 ..UC4
+    UC4 ..UC5
+}
+@enduml
