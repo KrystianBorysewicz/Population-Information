@@ -250,6 +250,11 @@ public class App {
                 "root","password123");
         Statement st = conn.createStatement();
 
+        if (query == null){
+            System.out.println("Query is empty");
+            return;
+        }
+
         ResultSet rs = st.executeQuery(query);
         ResultSetMetaData rsmd = rs.getMetaData();
         int columnsNumber = rsmd.getColumnCount();

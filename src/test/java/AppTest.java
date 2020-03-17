@@ -24,5 +24,19 @@ public class AppTest
         app.printQueryResult("SELECT * FROM country");
     }
 
+    @Test
+    void printQueryResultsNull() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
+        app.printQueryResult(null);
+    }
+
+    @Test
+    void printOptions1() {
+        app.printOptions(1);
+    }
+
+    @Test
+    void printOptions2() {
+        app.printOptions(2);
+    }
 
 }
