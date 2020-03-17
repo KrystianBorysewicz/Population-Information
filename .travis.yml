@@ -4,6 +4,12 @@ language: java
 
 services:
   - docker
+  -
+before_script:
+  - mvn clean
+
+install:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 after_success:
   - docker build -t se_methods .
