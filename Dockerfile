@@ -1,4 +1,4 @@
 FROM openjdk:latest
-COPY ./target/classes /tmp/classes
+COPY ./target/classes/com /tmp/com
 WORKDIR /tmp
-ENTRYPOINT ["java", "Main"]
+ENTRYPOINT ["java", "com.popinfo.sem.App"]
